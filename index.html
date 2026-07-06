@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Billify</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <div class="container">
+
+        <header class="hero">
+
+            <div class="logo">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+
+            <h1>Billify</h1>
+
+            <p>Split Bill Made Easy</p>
+
+            <div class="hero-badge">
+                Version 1.0
+            </div>
+
+        </header>
+
+        <!-- PESERTA -->
+
+        <section class="glass-card">
+
+            <div class="section-title">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h2>Peserta</h2>
+
+            </div>
+
+            <div id="participants"></div>
+
+            <div class="empty-state" id="participantEmptyState">
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                <p>
+
+                    Tambahkan minimal 2 peserta
+
+                </p>
+
+            </div>
+
+            <button id="addParticipant" class="secondary-btn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Tambah Peserta
+
+            </button>
+
+        </section>
+
+        <!-- MENU -->
+
+        <section class="glass-card">
+
+            <div class="section-title">
+
+                <i class="fa-solid fa-utensils"></i>
+
+                <h2>Menu</h2>
+
+            </div>
+
+            <div id="menus"></div>
+
+            <div class="empty-state" id="menuEmptyState">
+
+                <i class="fa-solid fa-bowl-food"></i>
+
+                <p>Belum ada menu</p>
+
+            </div>
+
+            <button id="addMenu" class="secondary-btn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Tambah Menu
+
+            </button>
+
+        </section>
+
+        <!-- BIAYA -->
+
+        <section class="glass-card">
+
+            <div class="section-title">
+
+                <i class="fa-solid fa-receipt"></i>
+
+                <h2>Biaya Tambahan</h2>
+
+            </div>
+
+            <div class="cost-grid">
+
+                <div class="input-group">
+
+                    <label>PPN (%)</label>
+
+                    <input id="tax" type="number" value="11">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Service (%)</label>
+
+                    <input id="service" type="number" value="5">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Biaya Lain (Rp)</label>
+
+                    <input id="otherCost" type="number" value="0">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <button id="calculateBtn" class="primary-btn">
+
+            <i class="fa-solid fa-calculator"></i>
+
+            Hitung Split Bill
+
+        </button>
+
+        <!-- HASIL -->
+
+        <section class="glass-card">
+
+            <div class="section-title">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <h2>Hasil Perhitungan</h2>
+
+            </div>
+
+            <div id="result">
+
+                <div class="empty-state" id="resultEmptyState">
+
+                    <i class="fa-solid fa-calculator"></i>
+
+                    <p>
+
+                        Tekan tombol Hitung Split Bill
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+    <!-- Floating Action Button -->
+    <button id="fab" class="fab">
+
+        <i class="fa-solid fa-plus"></i>
+
+    </button>
+
+    <!-- Loading -->
+
+    <div id="loadingOverlay" class="loading-overlay">
+
+        <div class="loader-card">
+
+            <div class="loader"></div>
+
+            <h3>Menghitung...</h3>
+
+            <p>Sedang membagi tagihan</p>
+
+        </div>
+
+    </div>
+
+    <!-- Toast -->
+
+    <div id="toast" class="toast">
+
+        Berhasil
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+
+            Made with ❤️ using Billify
+
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
