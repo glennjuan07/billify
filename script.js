@@ -247,12 +247,19 @@ priceInput.addEventListener("input", e => {
 
             const label = document.createElement("label");
 
-            label.style.display = "block";
-            label.style.marginBottom = "8px";
+label.style.display = "flex";
+label.style.alignItems = "center";
+label.style.gap = "10px";
+label.style.marginBottom = "8px";
+label.style.cursor = "pointer";
 
-            const checkbox = document.createElement("input");
+const checkbox = document.createElement("input");
 
-            checkbox.type = "checkbox";
+checkbox.type = "checkbox";
+checkbox.style.margin = "0";
+checkbox.style.flexShrink = "0";
+checkbox.style.width = "20px";
+checkbox.style.height = "20px";
 
             checkbox.checked = menu.eaters.includes(person.id);
 
@@ -272,9 +279,13 @@ priceInput.addEventListener("input", e => {
 
             label.appendChild(checkbox);
 
-            label.append(" " + (person.name || "Peserta"));
+const text = document.createElement("span");
+text.textContent = person.name || "Peserta";
+text.style.whiteSpace = "nowrap";
 
-            card.appendChild(label);
+label.appendChild(text);
+
+card.appendChild(label);
 
         });
 
